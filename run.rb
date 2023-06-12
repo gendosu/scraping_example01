@@ -6,7 +6,7 @@ require 'json'
 kakakucom_url = 'https://kakaku.com/item/J0000039558/spec/#tab'
 
 # 指定したURLのページを開く
-page = Nokogiri::HTML(open(kakakucom_url))
+page = Nokogiri::HTML(URI.open(kakakucom_url))
 
 # 必要な情報を抽出
 product_name = page.css('div.productName h2').text
